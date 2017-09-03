@@ -1,0 +1,11 @@
+<md-toolbar class="main-toolbar">
+  <h2 class="md-headline">Contacts</h2>
+  <div class="md-toolbar-tools">
+    <md-button ng-click="$ctrl.toggleFilters()">
+      <md-icon md-font-set="material-icons">filter_list</md-icon>
+      Filter
+    </md-button>
+  </div>
+</md-toolbar>
+<filterbar show-filters="$ctrl.showFilters"></filterbar>
+<contacts contacts="$ctrl.contacts"></contacts>
