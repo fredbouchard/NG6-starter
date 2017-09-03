@@ -1,7 +1,7 @@
 import ContactsModule from './index';
-import ContactsController from './contacts.controller';
-import ContactsComponent from './contacts.component';
-import ContactsTemplate from './contacts.html';
+import ContactsController from './contacts-list.controller';
+import ContactsComponent from './contacts-list.component';
+import ContactsTemplate from './contacts-list.html';
 
 describe('Contacts', () => {
   let $rootScope, makeController;
