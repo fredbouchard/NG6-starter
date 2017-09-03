@@ -1,11 +1,11 @@
 import angular from 'angular';
-import Contacts from './contacts';
+import ContactsList from './contacts-list';
 import Contact from './contact';
 import Main from './main';
 
 let componentModule = angular.module('app.components', [
   Main,
-  Contacts,
+  ContactsList,
   Contact
 ])
 
