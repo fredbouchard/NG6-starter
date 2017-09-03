@@ -5,11 +5,15 @@ $primaryColor:   #0277bd;
 $accentColor:    #1de9b6;
 $bgColor:        #efefef;
 $darkBgColor:    #263238;
-$lightBgColor:   #37474f;
+$lightBgColor:   #F5F5F5;
 $lightTextColor: #f5f5f5;
 $darkTextColor:  #212121;
 
+$global-timing: 600ms;
+$global-spacing: 24px;
+
 body {
+   font-family: Roboto, "Helvetica Neue", sans-serif;
    height: 100%;
 }
 

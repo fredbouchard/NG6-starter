@@ -1,16 +1,37 @@
+@import '../../common/common';
+
+$picture-size: 48px;
+
 .contact {
 
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  md-card-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    transition: $global-timing;
+
+    &:hover{
+      cursor: pointer;
+      background-color: $lightBgColor;
+    }
+  }
 
   &-picture {
-    width: 100px;
-    height: 100px;
+    width: $picture-size;
+    height: $picture-size;
     border-radius: 50%;
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
+  }
+
+  &-name {
+    flex: 1 1 auto;
+    margin-left: $global-spacing;
+  }
+
+  &-detail {
+    margin-left: $global-spacing;
   }
 }

@@ -1,6 +1,5 @@
-<md-card>
+<md-card class="contact">
   <md-card-content>
-    <div class="contact">
       <div
         class="contact-picture"
         ng-style="{'background-image': $ctrl.pictureUrl }">
@@ -8,6 +7,8 @@
       <div class="contact-name">
         {{ $ctrl.name }}
       </div>
-    </div>
+      <div class="contact-details">
+        <md-icon md-font-set="material-icons md-48">remove_red_eye</md-icon>
+      </div>
   </md-card-content>
 </md-card>
