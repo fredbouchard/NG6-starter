@@ -5,12 +5,7 @@ import './contacts-list-item.scss';
 let contactComponent = {
   bindings: {
     name: '@',
-    phone: '@',
-    job: '@',
-    email: '@',
-    address: '@',
     picture: '@',
-
   },
   template,
   controller

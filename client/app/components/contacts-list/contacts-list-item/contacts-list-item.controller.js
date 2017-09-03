@@ -4,10 +4,7 @@ class ContactController {
   }
 
   $onInit() {
-    console.log('>>>', this.picture);
     this.pictureUrl = `url('${this.picture}')`;
-
-    console.log('>>>', this.picture);
   }
 
   $onChanges(changes) {

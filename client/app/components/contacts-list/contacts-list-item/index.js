@@ -6,8 +6,7 @@ let contactListItemModule = angular.module('contactsListItem', [
   uiRouter
 ])
 
-.component('contactsListItem', contactsListItemComponent)
-
-.name;
+  .component('contactsListItem', contactsListItemComponent)
+  .name;
 
 export default contactListItemModule;
