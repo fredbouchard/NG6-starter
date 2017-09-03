@@ -1,6 +1,6 @@
-import template from './contact.html';
-import controller from './contact.controller';
-import './contact.scss';
+import template from './contacts-list-item.html';
+import controller from './contacts-list-item.controller';
+import './contacts-list-item.scss';
 
 let contactComponent = {
   bindings: {
