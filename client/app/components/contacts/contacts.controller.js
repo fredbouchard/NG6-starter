@@ -1,22 +1,30 @@
 class ContactsController {
-
-  constructor(contactsService) {
-    this.contactsService = contactsService;
-    this.contacts = {};
+  constructor() {
+    this.loadedContacts = {};
   }
 
   $onInit() {
-    this.contactsService.get().then(
-      data => {
-        this.contacts = data;
-      }
-    )
+    if(this.contacts){
+      this.loadedContacts = this.contacts;
+    }
 
+    console.log('>>>', this.loadedContacts);
+  }
+
+  $onChanges(changes) {
+    if( changes.contacts && changes.contacts.currentValue !== changes.contacts.previousValue ){
+      this.loadedContacts = changes.contacts.currentValue;
+    }
+  }
+
+  addContact() {
+    let newContact = {
+      "id": "003",
+      "name": "FU"
+    };
+    this.loadedContacts.push(newContact);
   }
 }
-
-//Inject Service
-ContactsController.$inject = ['contactsService'];
 
 export default ContactsController;
 

@@ -3,7 +3,9 @@ import controller from './contacts.controller';
 import './contacts.scss';
 
 let contactsComponent = {
-  bindings: {},
+  bindings: {
+    contacts: "<"
+  },
   template,
   controller
 };

@@ -1,11 +1,9 @@
 module.exports = function ($stateProvider, $urlRouterProvider) {
   "ngInject";
 
-  $urlRouterProvider.otherwise('/');
-
   $stateProvider
-    .state('contacts', {
-      url: '/',
-      component: 'contacts'
+    .state('contact', {
+      url: '/:id',
+      component: 'contactDetails'
     });
 };
