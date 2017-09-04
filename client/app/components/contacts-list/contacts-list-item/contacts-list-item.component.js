@@ -6,6 +6,9 @@ let contactComponent = {
   bindings: {
     name: '@',
     picture: '@',
+    onEdit: '&?',
+    onDelete: '&?',
+    onView: '&'
   },
   template,
   controller

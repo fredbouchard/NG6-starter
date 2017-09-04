@@ -2,7 +2,10 @@
   ng-repeat="contact in $ctrl.loadedContacts | filter: { name: $ctrl.filterByName }"
   name="{{ contact.name }}"
   picture="{{ contact.picture }}"
-  ng-click="$ctrl.toggleDetailView(contact.id)">
+  ng-click="$ctrl.toggleView(contact.$$hashKey)"
+  on-view="$ctrl.toggleView(contact.$$hashKey)"
+  on-edit="$ctrl.triggerEdit(contact.$$hashKey)"
+  on-delete="$ctrl.triggerDelete(contact.$$hashKey)">
 </contacts-list-item>
 
 <md-sidenav
@@ -10,12 +13,12 @@
   md-component-id="add"
   md-whiteframe="4">
   <contacts-list-detail
-    contact="$ctrl.loadContact">
+    contact="$ctrl.contact">
   </contacts-list-detail>
 </md-sidenav>
 
 <md-button
-  ng-click="$ctrl.addContact($event)"
+  ng-click="$ctrl.openContactDialog($event)"
   class="contacts-list-action--add md-fab"
   aria-label="FAB">
   <md-icon md-font-set="material-icons md-48">add</md-icon>

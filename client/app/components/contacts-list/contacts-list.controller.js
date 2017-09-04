@@ -1,10 +1,8 @@
 import _ from 'lodash';
 
 class ContactsListController {
-  constructor(
-      $mdSidenav,
-      $mdDialog
-  ) {
+  constructor($mdSidenav,
+              $mdDialog) {
     this.$mdSidenav = $mdSidenav;
     this.$mdDialog = $mdDialog;
   }
@@ -12,7 +10,7 @@ class ContactsListController {
   $onInit() {
     this.loadedContacts = [];
     this.filterByName = '';
-    this.loadContact = null;
+    this.contact = null;
   }
 
   $onChanges(changes) {
@@ -21,41 +19,64 @@ class ContactsListController {
     }
   }
 
-  addContact(event) {
-    console.log('>>>', this.loadedContacts);
-    // @todo Open the add contact modal
+  openContactDialog(contact, mode='add') {
     this.$mdDialog.show({
       controller: ContactsListController,
       controllerAs: '$ctrl',
-      event: event,
+      preserveScope: true,
       templateUrl: '/app/components/contacts-list/common/add/contacts-list.add.tpl.html',
       parent: angular.element(document.body),
       clickOutsideToClose: true,
       locals: {
-        'contacts': 'fu'
-      }
+        mode,
+        contact
+      },
+      bindToController: true
     })
-      .then(function (answer) {
-       console.log(answer);
-      }, function () {
-       console.log('You cancelled the dialog.');
+      .then(newContact => {
+        this._saveContact(newContact);
+      }, () => {
+        console.log('>>', 'User cancel');
       });
   }
 
-  onSaveDialog(answer) {
-    this.$mdDialog.hide(answer);
-  }
-
-  closeDialogue(){
+  closeDialogue() {
     this.$mdDialog.cancel();
   }
 
-  toggleDetailView(id) {
-    this.loadContact = _.find(this.loadedContacts, {id: id});
+  onSaveContactDialog(newContact) {
+    this.$mdDialog.hide(newContact);
+  }
+
+  toggleView(hashKey) {
+    this.contact = _.find(this.loadedContacts, {$$hashKey: hashKey});
     this.$mdSidenav('add')
-      .toggle()
-      .then(() => {
-      });
+      .toggle();
+  }
+
+  triggerEdit(hashKey) {
+    this.contact = _.find(this.loadedContacts, {$$hashKey: hashKey});
+    this.openContactDialog(this.contact, 'edit');
+  }
+
+  triggerDelete(hashKey) {
+    //Normally I would call a "remove" Method in the contacts.svc that calls the API
+    _.remove(this.loadedContacts, {
+      $$hashKey: hashKey
+    });
+  }
+
+  _saveContact(contact) {
+
+    if (contact) {
+      if(_.isNil(contact.$$hashKey)) {
+        //Normally I would call an "add" Method in the contacts.svc that calls the API
+        this.loadedContacts.push(contact);
+      } else {
+        //Normally I would call an "update" Method in the contacts.svc that calls the API
+        _.update(this.loadedContacts, this.loadedContacts[contact.$$hashKey], contact);
+      }
+    }
   }
 }
 
