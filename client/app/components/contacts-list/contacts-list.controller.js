@@ -1,8 +1,12 @@
 import _ from 'lodash';
 
 class ContactsListController {
-  constructor($mdSidenav) {
+  constructor(
+      $mdSidenav,
+      $mdDialog
+  ) {
     this.$mdSidenav = $mdSidenav;
+    this.$mdDialog = $mdDialog;
   }
 
   $onInit() {
@@ -17,8 +21,33 @@ class ContactsListController {
     }
   }
 
-  addContact() {
+  addContact(event) {
+    console.log('>>>', this.loadedContacts);
     // @todo Open the add contact modal
+    this.$mdDialog.show({
+      controller: ContactsListController,
+      controllerAs: '$ctrl',
+      event: event,
+      templateUrl: '/app/components/contacts-list/common/add/contacts-list.add.tpl.html',
+      parent: angular.element(document.body),
+      clickOutsideToClose: true,
+      locals: {
+        'contacts': 'fu'
+      }
+    })
+      .then(function (answer) {
+       console.log(answer);
+      }, function () {
+       console.log('You cancelled the dialog.');
+      });
+  }
+
+  onSaveDialog(answer) {
+    this.$mdDialog.hide(answer);
+  }
+
+  closeDialogue(){
+    this.$mdDialog.cancel();
   }
 
   toggleDetailView(id) {
@@ -31,7 +60,7 @@ class ContactsListController {
 }
 
 // DInjections
-ContactsListController.$inject = ['$mdSidenav'];
+ContactsListController.$inject = ['$mdSidenav', '$mdDialog'];
 
 export default ContactsListController;
 

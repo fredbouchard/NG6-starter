@@ -1,0 +1,41 @@
+<md-dialog
+  aria-label="List dialog"
+  class="contacts-list-dialog">
+  <md-toolbar>
+    <h1 class="md-toolbar-tools">Add a Contact</h1>
+  </md-toolbar>
+  <md-dialog-content layout-padding>
+    <form class="contacts-list-form">
+      <md-input-container>
+        <label for="name">Name</label>
+        <input name="name" id="name" md-autofocus ng-model="contact.name"/>
+      </md-input-container>
+      <md-input-container>
+        <label for="picture">Picture</label>
+        <input name="picture" id="picture" ng-model="contact.picture"/>
+      </md-input-container>
+      <md-input-container>
+        <label for="job">Job</label>
+        <input name="job" id="job" ng-model="contact.job"/>
+      </md-input-container>
+      <md-input-container>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="description" ng-model="contact.email"/>
+      </md-input-container>
+      <md-input-container>
+        <label for="address">Address</label>
+        <input name="address" id="address" ng-model="contact.address"/>
+      </md-input-container>
+    </form>
+  </md-dialog-content>
+  <md-dialog-actions>
+    <md-button class="md-warn" ng-click="$ctrl.closeDialogue()">
+      Cancel
+    </md-button>
+    <md-button class="md-primary" ng-click="$ctrl.onSaveDialog(contact)" ng-if="!editing">
+      Save
+    </md-button>
+  </md-dialog-actions>
+</md-dialog>
+
+
