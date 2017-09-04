@@ -1,6 +1,6 @@
 # About this Project
-This project is a little sample of a Contacts Manager running in a single page app. It's approach is component based for scalability.
-All the part I've coded are under `/client` folder. The rest of the credits goes to the following [below](#credits)
+This project is a little sample of a Contacts Manager running in a single page app. Its approach is component based for scalability.
+All the part I've coded are under the `/client` folder. The rest of the credits goes to the following [below](#credits)
 
 # Getting Started
 ## Dependencies
