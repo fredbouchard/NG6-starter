@@ -65,7 +65,7 @@ contacts-list-item:last-of-type {
     &-actions {
       position: absolute;
       margin-left: 0;
-      transition: $global-timing;
+      transition: background-color $global-timing;
       width: 100%;
       height: 100%;
 
