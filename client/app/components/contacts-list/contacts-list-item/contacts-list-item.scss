@@ -49,6 +49,7 @@ contacts-list-item:last-of-type {
       justify-content: center;
       align-items: center;
       transition: $global-timing;
+      position: relative;
 
       &:hover {
         cursor: pointer;
@@ -63,10 +64,13 @@ contacts-list-item:last-of-type {
 
     &-actions {
       position: absolute;
-      align-self: flex-end;
       margin-left: 0;
-      flex: 1 1 auto;
       transition: $global-timing;
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      justify-content: flex-end;
 
       &:hover {
         background-color: rgba(128,128,128,0.25);
