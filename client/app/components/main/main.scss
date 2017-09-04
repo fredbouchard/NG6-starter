@@ -1,5 +1,9 @@
 @import '../../common/common';
 
+main {
+  height: 100%;
+}
+
 .main {
   &-toolbar {
     display: flex;

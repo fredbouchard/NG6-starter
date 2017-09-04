@@ -26,7 +26,7 @@ class ContactsListController {
       preserveScope: true,
       templateUrl: '/app/components/contacts-list/common/add/contacts-list.add.tpl.html',
       parent: angular.element(document.body),
-      clickOutsideToClose: true,
+      clickOutsideToClose: false,
       locals: {
         mode,
         contact

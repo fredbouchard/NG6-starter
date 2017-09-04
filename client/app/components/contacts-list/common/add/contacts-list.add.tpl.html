@@ -33,7 +33,10 @@
       </md-input-container>
     </md-dialog-content>
     <md-dialog-actions>
-      <md-button class="md-warn" ng-click="$ctrl.closeDialogue()">
+      <md-button
+        class="md-warn"
+        ng-click="$ctrl.closeDialogue()"
+        ng-disabled="$ctrl.mode === 'edit' && !$ctrl.contact.name">
         Cancel
       </md-button>
       <md-button
