@@ -15,7 +15,7 @@ contacts-list-item:last-of-type {
     align-items: center;
     transition: $global-timing;
 
-    &:hover{
+    &:hover {
       cursor: pointer;
       background-color: $lightBgColor;
     }
@@ -36,7 +36,41 @@ contacts-list-item:last-of-type {
     margin-left: $global-spacing;
   }
 
-  &-detail {
+  &-actions {
     margin-left: $global-spacing;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .contactsListItem {
+    md-card-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: $global-timing;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $lightBgColor;
+      }
+    }
+
+    &-name {
+      flex: 1 1 auto;
+      margin-left: 0;
+    }
+
+    &-actions {
+      position: absolute;
+      align-self: flex-end;
+      margin-left: 0;
+      flex: 1 1 auto;
+      transition: $global-timing;
+
+      &:hover {
+        background-color: rgba(128,128,128,0.25);
+      }
+    }
   }
 }
