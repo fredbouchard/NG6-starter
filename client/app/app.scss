@@ -1,5 +1,18 @@
 @import "common/common";
 
+html {
+  background-color: $bgColor;
+}
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  height: 100%;
+}
+
+*:focus {
+  outline: 0;
+}
+
 .app {
   height: 100vh;
   background-color: $bgColor;
