@@ -1,7 +1,7 @@
 {
-  "name": "ng-contacs",
+  "name": "ng-contacts",
   "version": "0.0.1",
-  "description": "Contacts manager app powered by (ng6-starter)",
+  "description": "Contacts Manager App (Boilerplate: ng6-starter)",
   "main": "index.js",
   "dependencies": {
     "angular": "^1.5.0",
@@ -70,9 +70,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/angularclass/NG6-starter.git"
+    "url": "https://github.com/fredbouchard/ng-contacts.git"
   },
-  "author": "AngularClass",
+  "author": "FredBouchard",
   "license": "Apache-2.0",
   "babel": {
     "plugins": [
