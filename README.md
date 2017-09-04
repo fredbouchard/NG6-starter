@@ -11,10 +11,9 @@ Tools needed to run this app:
 ## Installing
 * `npm install` to install dependencies
 
-## To Start The App
-* run in a terminal the following command `gulp'
-
 ## Running the App
+* Simply run in a terminal the following command `gulp'
+
 This projects uses Gulp to build and launch the development environment. After you have installed all dependencies, you may run the app. Running `npm start` will bundle the app with `webpack`, launch a development server, and watch all files. The port will be displayed in the terminal.
  
 ### Tasks
@@ -45,6 +44,6 @@ To run the tests, run `npm test`.
 Be sure to define your `*.spec.js` files within their corresponding component directory. You must name the spec file like so, `[name].spec.js`. If you don't want to use the `.spec.js` suffix, you must change the `regex` in `spec.bundle.js` to look for whatever file(s) you want.
 `Mocha` is the testing suite and `Chai` is the assertion library. If you would like to change this, see `karma.conf.js`.
 
-### Credits
+## Credits
 * [NG6-Starter](https://angularclass.github.io/NG6-starter/) as boiler plate. 
 * [AngularJS Material](https://material.angularjs.org/latest/) for a better user experience.
