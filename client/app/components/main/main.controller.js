@@ -1,9 +1,12 @@
+import _ from 'lodash';
+
 class MainController {
   constructor(contactsService) {
     this.name = 'main';
     this.showFilters = false;
     this.contactsService = contactsService;
     this.contacts = {};
+    this.searchName = null;
   }
 
 
@@ -16,7 +19,6 @@ class MainController {
   }
 
   toggleFilters() {
-    console.log('>>>', this.showFilters);
     this.showFilters = !this.showFilters;
   }
 }

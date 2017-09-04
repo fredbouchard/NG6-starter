@@ -1,6 +1,8 @@
 class FilterbarController {
-  constructor() {
-    this.name = 'filterbar';
+  constructor() {}
+
+  clearFilters() {
+    this.searchValue = '';
   }
 }
 

@@ -1,21 +1,12 @@
 <!-- Filter-bar -->
 <div class="filters" layout="row" layout-align="center center" ng-show="$ctrl.showFilters">
   <md-input-container layout="row">
-    <label>Enter a Search Term</label>
-    <input ng-model="classifiedsFilter" type="text">
+    <label>Filter contacts by name</label>
+    <input ng-model="$ctrl.searchValue" type="text">
   </md-input-container>
 
   <md-input-container layout="row">
-    <label>Category</label>
-    <md-select ng-model="categoriesFilter">
-      <md-option ng-repeat="category in vm.categories" value="{{ category }}">
-        {{ category }}
-      </md-option>
-    </md-select>
-  </md-input-container>
-
-  <md-input-container layout="row">
-    <md-button class="md-warn" ng-click="classifiedsFilter = ''; categoriesFilter = ''">Clear</md-button>
+    <md-button class="md-raised md-warn" ng-click="$ctrl.clearFilters()">Clear</md-button>
   </md-input-container>
 </div>
 <!-- End of Filter-bar -->

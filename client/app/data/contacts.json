@@ -1,11 +1,11 @@
 [
   {
     "id": "c001",
-    "name": "Max Power",
-    "address": "2 PartDeuxDuTrouDeau, Montreal",
-    "job": "dev",
-    "phone": "514-555-1234",
-    "email": "max.power@email.com",
+    "name": "Barack Obama",
+    "address": "Somewhere, United-States",
+    "job": "Retired",
+    "phone": "202-555-3444",
+    "email": "barack.obama@whitehouse.gov",
     "picture": "https://static01.nyt.com/images/2011/07/31/sunday-review/FACES/FACES-jumbo.jpg"
   },
   {

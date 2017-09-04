@@ -7,5 +7,11 @@
     </md-button>
   </div>
 </md-toolbar>
-<filterbar show-filters="$ctrl.showFilters"></filterbar>
-<contacts-list contacts="$ctrl.contacts"></contacts-list>
+<filterbar
+  show-filters="$ctrl.showFilters"
+  search-value="$ctrl.searchName"></filterbar>
+<contacts-list
+  contacts="$ctrl.contacts"
+  filter-by-name="$ctrl.searchName"
+  category-list="$ctrl.jobType"
+></contacts-list>

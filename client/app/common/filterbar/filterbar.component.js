@@ -4,7 +4,9 @@ import './filterbar.scss';
 
 let filterbarComponent = {
   bindings: {
-    showFilters: '<'
+    showFilters: '<',
+    categoryList: '<',
+    searchValue: '='
   },
   template,
   controller

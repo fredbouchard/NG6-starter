@@ -1,31 +1,38 @@
-class ContactsController {
-  constructor() {
-    this.loadedContacts = {};
+import _ from 'lodash';
+
+class ContactsListController {
+  constructor($mdSidenav) {
+    this.$mdSidenav = $mdSidenav;
   }
 
   $onInit() {
-    if(this.contacts){
-      this.loadedContacts = this.contacts;
-    }
-
-    console.log('>>>', this.loadedContacts);
+    this.loadedContacts = [];
+    this.filterByName = '';
+    this.loadContact = null;
   }
 
   $onChanges(changes) {
-    if( changes.contacts && changes.contacts.currentValue !== changes.contacts.previousValue ){
+    if (changes.contacts && changes.contacts.currentValue !== changes.contacts.previousValue) {
       this.loadedContacts = changes.contacts.currentValue;
     }
   }
 
   addContact() {
-    let newContact = {
-      "id": "003",
-      "name": "FU"
-    };
-    this.loadedContacts.push(newContact);
+    // @todo Open the add contact modal
+  }
+
+  toggleDetailView(id) {
+    this.loadContact = _.find(this.loadedContacts, {id: id});
+    this.$mdSidenav('add')
+      .toggle()
+      .then(() => {
+      });
   }
 }
 
-export default ContactsController;
+// DInjections
+ContactsListController.$inject = ['$mdSidenav'];
+
+export default ContactsListController;
 
 

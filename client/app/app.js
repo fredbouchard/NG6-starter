@@ -10,7 +10,6 @@ import Components from './components/components';
 import AppComponent from './app.component';
 
 
-
 angular.module('app', [
     uiRouter,
     ngMaterial,

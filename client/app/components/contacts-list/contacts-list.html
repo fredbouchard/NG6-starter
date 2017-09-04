@@ -1,19 +1,19 @@
 <contacts-list-item
-  ng-repeat="contact in $ctrl.loadedContacts"
+  ng-repeat="contact in $ctrl.loadedContacts | filter: { name: $ctrl.filterByName }"
   name="{{ contact.name }}"
-  address="{{ contact.address }}"
-  email="{{ contact.email }}"
-  phone="{{ contact.phone }}"
   picture="{{ contact.picture }}"
-></contacts-list-item>
-<md-content>
-  <!-- <pre>{{classifieds | json}}</pre> -->
+  ng-click="$ctrl.toggleDetailView(contact.id)">
+</contacts-list-item>
 
-  <!--<classifieds-card class="md-padding" layout="row" layout-wrap-->
-                    <!--classifieds="vm.classifieds"-->
-                    <!--classifieds-filter="classifiedsFilter"-->
-                    <!--categories-filter="categoriesFilter"></classifieds-card>-->
-</md-content>
+<md-sidenav
+  class="md-sidenav-left"
+  md-component-id="add"
+  md-whiteframe="4">
+  <contacts-list-detail
+    contact="$ctrl.loadContact">
+  </contacts-list-detail>
+</md-sidenav>
+
 <md-button
   ng-click="$ctrl.addContact()"
   class="contacts-action--add md-fab"

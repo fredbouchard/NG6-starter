@@ -4,7 +4,8 @@ import './contacts-list.scss';
 
 let contactsListComponent = {
   bindings: {
-    contacts: "<"
+    contacts: "<",
+    filterByName: "<"
   },
   template,
   controller
