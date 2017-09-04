@@ -1,20 +1,31 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
+import ngMaterial from 'angular-material';
+import 'angular-material/angular-material.css';
+import 'normalize.css';
+
 import Common from './common/common';
+import Services from './services';
 import Components from './components/components';
 import AppComponent from './app.component';
-import 'normalize.css';
+
 
 angular.module('app', [
     uiRouter,
+    ngMaterial,
     Common,
-    Components
+    Components,
+    Services
   ])
-  .config(($locationProvider) => {
+  .config(($locationProvider, $mdThemingProvider) => {
     "ngInject";
     // @see: https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions
     // #how-to-configure-your-server-to-work-with-html5mode
     $locationProvider.html5Mode(true).hashPrefix('!');
+
+    $mdThemingProvider.theme('default')
+      .primaryPalette('teal')
+      .accentPalette('pink');
   })
 
   .component('app', AppComponent);

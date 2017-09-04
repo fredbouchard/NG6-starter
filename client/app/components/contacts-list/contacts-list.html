@@ -1,0 +1,34 @@
+<div
+  class="contacts-list"
+  ng-class="{'empty': $ctrl.loadedContacts.length === 0}">
+  <contacts-list-item
+    ng-repeat="contact in $ctrl.loadedContacts | filter: { name: $ctrl.filterByName }"
+    name="{{ contact.name }}"
+    picture="{{ contact.picture }}"
+    ng-click="$ctrl.toggleView(contact.$$hashKey)"
+    on-view="$ctrl.toggleView(contact.$$hashKey)"
+    on-edit="$ctrl.triggerEdit(contact.$$hashKey)"
+    on-delete="$ctrl.triggerDelete(contact.$$hashKey)">
+  </contacts-list-item>
+
+  <div class="no-contacts" ng-show="$ctrl.loadedContacts.length === 0">
+    <p>Sorry, you have no contacts. <br /> You can add someone by using the "+" in bottom-right corner.</p>
+  </div>
+
+  <md-sidenav
+    class="md-sidenav-left"
+    md-component-id="add"
+    md-whiteframe="4">
+    <contacts-list-detail
+      contact="$ctrl.contact">
+    </contacts-list-detail>
+  </md-sidenav>
+
+  <md-button
+    ng-click="$ctrl.openContactDialog($event)"
+    class="contacts-list-action--add md-fab"
+    aria-label="FAB">
+    <md-icon md-font-set="material-icons md-48">add</md-icon>
+  </md-button>
+</div>
+

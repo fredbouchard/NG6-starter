@@ -1,0 +1,53 @@
+<md-dialog
+  aria-label="List dialog"
+  class="contacts-list-dialog">
+  <form name="$ctrl.form">
+    <md-toolbar>
+      <h1
+        ng-show="$ctrl.mode === 'add'"
+        class="md-toolbar-tools">Add a Contact</h1>
+      <h1
+        ng-show="$ctrl.mode === 'edit'"
+        class="md-toolbar-tools">Edit {{ $ctrl.contact.name }}</h1>
+    </md-toolbar>
+    <md-dialog-content class="contacts-list-form">
+      <md-input-container>
+        <label for="name">Name</label>
+        <input name="name" id="name" required md-autofocus ng-model="$ctrl.contact.name"/>
+      </md-input-container>
+      <md-input-container>
+        <label for="picture">Picture</label>
+        <input name="picture" id="picture" ng-model="$ctrl.contact.picture"/>
+      </md-input-container>
+      <md-input-container>
+        <label for="job">Job</label>
+        <input name="job" id="job" ng-model="$ctrl.contact.job"/>
+      </md-input-container>
+      <md-input-container>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="description" ng-model="$ctrl.contact.email"/>
+      </md-input-container>
+      <md-input-container>
+        <label for="address">Address</label>
+        <input name="address" id="address" ng-model="$ctrl.contact.address"/>
+      </md-input-container>
+    </md-dialog-content>
+    <md-dialog-actions>
+      <md-button
+        class="md-warn"
+        ng-click="$ctrl.closeDialogue()"
+        ng-disabled="$ctrl.mode === 'edit' && !$ctrl.contact.name">
+        Cancel
+      </md-button>
+      <md-button
+        type="submit"
+        class="md-primary"
+        ng-click="$ctrl.onSaveContactDialog($ctrl.contact)"
+        ng-disabled="$ctrl.form.$invalid">
+        Save
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
+
+

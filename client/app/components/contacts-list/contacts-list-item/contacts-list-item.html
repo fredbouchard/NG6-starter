@@ -1,0 +1,63 @@
+<md-card class="contactsListItem">
+  <md-card-content>
+    <div
+      class="contactsListItem-picture"
+      ng-style="{'background-image': $ctrl.pictureUrl }">
+    </div>
+    <div class="contactsListItem-name">
+      {{ $ctrl.name }}
+    </div>
+    <div class="contactsListItem-actions">
+      <md-fab-speed-dial
+        class="md-scale"
+        md-direction="left"
+        md-open="$ctrl.fabDialIsOpen"
+        ng-mouseenter="$ctrl.openFabDial($event)"
+        ng-mouseleave="$ctrl.closeFabDial($event)">
+        <md-fab-trigger>
+          <md-button aria-label="menu" class="md-fab" ng-click="$ctrl.openFabDial($event)">
+            <md-icon md-font-set="material-icons md-48" aria-label="menu">menu</md-icon>
+          </md-button>
+        </md-fab-trigger>
+        <md-fab-actions>
+          <md-button
+            ng-if="$ctrl.onView"
+            aria-label="view"
+            class="md-fab md-raised md-mini"
+            ng-click="$ctrl.view($event)">
+            <md-tooltip
+              md-direction="bottom"
+              md-autohide="false">
+              view
+            </md-tooltip>
+            <md-icon md-font-set="material-icons" aria-label="view">remove_red_eye</md-icon>
+          </md-button>
+          <md-button
+            ng-if="$ctrl.onEdit"
+            aria-label="edit"
+            class="md-fab md-raised md-mini"
+            ng-click="$ctrl.edit($event)">
+            <md-tooltip
+              md-direction="bottom"
+              md-autohide="false">
+              edit
+            </md-tooltip>
+            <md-icon md-font-set="material-icons" aria-label="view">mode_edit</md-icon>
+          </md-button>
+          <md-button
+            ng-if="$ctrl.onDelete"
+            aria-label="delete"
+            class="md-fab md-raised md-mini"
+            ng-click="$ctrl.delete($event)">
+            <md-tooltip
+              md-direction="bottom"
+              md-autohide="false">
+              delete
+            </md-tooltip>
+            <md-icon md-font-set="material-icons" aria-label="view">delete</md-icon>
+          </md-button>
+        </md-fab-actions>
+      </md-fab-speed-dial>
+    </div>
+  </md-card-content>
+</md-card>

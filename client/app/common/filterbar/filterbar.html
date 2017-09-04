@@ -1,0 +1,12 @@
+<!-- Filter-bar -->
+<div class="filters" layout="row" layout-align="center center" ng-show="$ctrl.showFilters">
+  <md-input-container layout="row">
+    <label>Filter contacts by name</label>
+    <input ng-model="$ctrl.searchValue" type="text">
+  </md-input-container>
+
+  <md-input-container layout="row">
+    <md-button class="md-raised md-warn" ng-click="$ctrl.clearFilters()">Clear</md-button>
+  </md-input-container>
+</div>
+<!-- End of Filter-bar -->

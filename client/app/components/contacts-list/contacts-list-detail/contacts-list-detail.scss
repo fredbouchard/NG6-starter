@@ -1,0 +1,54 @@
+@import '../../../common/common';
+
+$picture-size: 128px;
+
+.contactsListDetail {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: $global-spacing;
+  transition: $global-timing;
+
+  &-picture {
+    width: $picture-size;
+    height: $picture-size;
+    border-radius: 50%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: $emptyColor;
+  }
+
+  &-name {
+    flex: 1 1 auto;
+    margin-bottom: $global-spacing;
+  }
+
+  &-info {
+    flex: 1 1 auto;
+    width: 100%;
+
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        margin: 0 0 $global-spacing 0;
+        padding: 0;
+      }
+    }
+
+    .info {
+      &-label {
+
+      }
+
+      &-value {
+        font-weight: bold;
+        word-wrap: break-word;
+      }
+    }
+  }
+}

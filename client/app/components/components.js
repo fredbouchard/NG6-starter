@@ -1,10 +1,10 @@
 import angular from 'angular';
-import Home from './home/home';
-import About from './about/about';
+import ContactsList from './contacts-list';
+import Main from './main';
 
 let componentModule = angular.module('app.components', [
-  Home,
-  About
+  Main,
+  ContactsList
 ])
 
 .name;

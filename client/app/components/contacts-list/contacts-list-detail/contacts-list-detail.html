@@ -1,0 +1,29 @@
+<md-content class="contactsListDetail">
+   <div
+     class="contactsListDetail-picture md-whiteframe-5dp"
+     ng-style="{'background-image': $ctrl.pictureUrl }">
+   </div>
+  <div class="contactsListDetail-name">
+    <h3>{{ $ctrl.contact.name }}</h3>
+  </div>
+  <div class="contactsListDetail-info">
+    <ul>
+      <li ng-if="$ctrl.contact.job">
+        <span class="info-label">Job Title:</span><br>
+        <span class="info-value">{{ $ctrl.contact.job }}</span>
+      </li>
+      <li ng-if="$ctrl.contact.email">
+        <span class="info-label">Email:</span><br>
+        <span class="info-value">{{ $ctrl.contact.email }}</span>
+      </li>
+      <li ng-if="$ctrl.contact.phone">
+        <span class="info-label">Phone:</span><br>
+        <span class="info-value">{{ $ctrl.contact.phone }}</span>
+      </li>
+      <li ng-if="$ctrl.contact.address">
+        <span class="info-label">Address:</span><br>
+        <span class="info-value">{{ $ctrl.contact.address }}</span>
+      </li>
+    </ul>
+  </div>
+</md-content>

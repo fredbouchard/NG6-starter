@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Barack Obama",
+    "address": "Somewhere, United-States",
+    "job": "Retired",
+    "phone": "202-555-3444",
+    "email": "barack.obama@whitehouse.gov",
+    "picture": "https://static01.nyt.com/images/2011/07/31/sunday-review/FACES/FACES-jumbo.jpg"
+  },
+  {
+    "name": "Matthew McConaughey",
+    "job": "Actor",
+    "address": "3210 Hillbilly Ln, Austin, Tx, United-States",
+    "email": "matt.mcconaughey@creativeartistsagency.com",
+    "phone": "424-288-2000 (Agent)",
+    "picture": "http://images.techtimes.com/data/images/full/19991/matthew-mcconaughey-in-interstellar.jpg"
+  }
+]
