@@ -1,12 +1,17 @@
+@import '../../common/common';
+
 .contacts-list {
 
   &-dialog {
     min-width: 580px;
+    max-width: 580px;
   }
 
   &-form {
     display: flex;
     flex-direction: column;
+    padding-top: $global-spacing * 2;
+    margin: 0 $global-spacing;
   }
 
   &-action {

@@ -1,19 +1,20 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 
-$primaryColor:   #0277bd;
-$accentColor:    #1de9b6;
-$bgColor:        #efefef;
-$darkBgColor:    #263238;
-$lightBgColor:   #F5F5F5;
+$primaryColor: #0277bd;
+$accentColor: #1de9b6;
+$bgColor: #efefef;
+$darkBgColor: #263238;
+$lightBgColor: #F5F5F5;
 $lightTextColor: #f5f5f5;
-$darkTextColor:  #212121;
+$darkTextColor: #212121;
+$emptyColor: #EAEAEA;
 
 $global-timing: 600ms;
 $global-spacing: 24px;
 
 body {
-   font-family: Roboto, "Helvetica Neue", sans-serif;
-   height: 100%;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  height: 100%;
 }
 
